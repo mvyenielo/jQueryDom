@@ -74,11 +74,17 @@
 </div>
 <script src="https://unpkg.com/jquery"></script>
 <script>
+  function changeBackground() {
+    let $colorInputs = $(".form-control");
+    return $("body").css("backgroundColor", `rgb(${$colorInputs[0].val()}, ${$colorInputs[1].val()}, ${$colorInputs[2].val()}`);
+  }
 
   $("article img").addClass("image-center");
   $("article p:last-child").remove();
   $("#title").css("fontSize", ()=> `${Math.floor(Math.random()*100)}px`);
   $("aside ol").append($("<li>").text("DELETE ME"));
+  $("aside").empty().add("<p>").text("I am so sorry about that list existing.")
+  $(".row mb-5").on("change", changeBackground)
 </script>
 </body>
 
